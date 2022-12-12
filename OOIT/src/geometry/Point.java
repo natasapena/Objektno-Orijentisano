@@ -7,8 +7,7 @@ public class Point {
 	private boolean selected;
 	
 	public Point ( ) {
-		
-	}
+		}
 	 
 	public Point (int x,int y) {
 		this.x=x;
@@ -37,27 +36,30 @@ public class Point {
 	
 	@Override
 	public boolean equals (Object obj) {
-		if (obj instanceof Point ) {
-			Point temp = (Point ) obj ; 
-			if ( x == temp.x && y == temp.y) {
+		if(obj instanceof Point) {
+			Point temp = (Point) obj;
+			if( x == temp.x && y == temp.y) {
 				return true;
 			}
-		}
-		return selected;
+		}return false;
 	}
+	
 	public int getX() {  //vraca vrednost od x
 		return x;
 	}
+	
 	public void setX(int x) {  //dodeljuje neku vrednost x kada pozovemo
 		this.x = x;  //this se odnosi na x kome dodeljujemo vrednost koju smo stavili u setX
 	}
+	
 	public int getY() {
 		return y;//obezbedjujemo to da kada neka klasa pita koliki je y dobije odg
-	
 	}
+	
 	public void setY(int y) {
 		this.y = y;
 	}
+	
 	public boolean isSelected() {
 		return selected;
 	}

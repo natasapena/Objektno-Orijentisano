@@ -66,7 +66,21 @@ public class Test {
 		System.out.println(r.toString());
 		
 		System.out.println(p4.equals(p5));
+		
+		//Novi cas
+		Donut d = new Donut (new Point(3,5), 8, 3);
+		System.out.println(d.area());
+		
+		Circle c3 = new Circle (new Point (3,5), 8);
+		System.out.println (c3.area());
 	
+		Point p6 = new Point (3,5);
+		System.out.println(c3.equals(d));
+		System.out.println(d.equals(c3));
+		/* ovde treba jedno da mi je true, a drugo false 
+		 * zato sto klasa Donut nasledjena od klase Circle
+		 */
+		
 	}
 	
 

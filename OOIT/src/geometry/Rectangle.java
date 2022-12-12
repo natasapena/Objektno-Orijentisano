@@ -8,7 +8,6 @@ public class Rectangle {
 	private boolean selected;
 
 	public Rectangle () {
-
 	}
 
 	public Rectangle (Point upperLeft, int width, int height) {
@@ -29,34 +28,54 @@ public class Rectangle {
 		return " upper Left point: "+ upperLeft + " width: "+ width+ 
 				" ,height: "+height;
 	}
+	
+	@Override
+	public boolean equals (Object obj) {
+		if (obj instanceof Rectangle) {
+			Rectangle temp = (Rectangle) obj;
+			if (upperLeft.equals (temp.getUpperLeft()) && width == temp.getWidth()
+					&& height == temp.getHeight()) {
+				return true;
+			}
+		}return false;
+	}
 
 	public int circumference() {
 	return 2*(width + height);
 	}
+	
 	public int area() {
 	return width*height;
 	}
+	
 	public Point getUpperLeft() {
 	return upperLeft;
 	}
+	
 	public void setUpperLeft(Point upperLeft) {
 	this.upperLeft = upperLeft;
 	}
+	
 	public int getWidth() {
 	return width;
 	}
+	
 	public void setWidth(int width) {
 	this.width = width;
 	}
+	
 	public int getHeight() {
 	return height;
 	}
+	
 	public void setHeight(int height) {
 	this.height = height;
 	}
+	
 	public boolean isSelected() {
 	return selected;
 	}
+	
 	public void setSelected(boolean selected) {
 	this.selected = selected;
 	}
