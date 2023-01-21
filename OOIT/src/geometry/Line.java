@@ -20,6 +20,15 @@ public class Line {
 	this.selected=selected;
 	}
 	
+	public double length() {
+		return startPoint.distance(endPoint.getX(), endPoint.getY());
+	}
+	
+	//ispod equals
+	public boolean contains(int x, int y) {
+		return(startPoint.distance(x, y) + endPoint.distance(x, y)) - length()<=2;
+	}
+	
 	@Override
 	public String toString () {
 		return startPoint + " --> " + endPoint;
@@ -27,7 +36,7 @@ public class Line {
 	
 	@Override
 	public boolean equals (Object obj) {
-		if (obj instanceof Line) {
+		if (obj instanceof Line) { 
 			Line temp = (Line) obj;
 			if(startPoint.equals(temp.getStartPoint()) && endPoint == temp.getEndPoint()) {
 				return true;

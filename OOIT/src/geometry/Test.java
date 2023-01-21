@@ -4,7 +4,8 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		Point p1 = new Point();
+		// Point p = new Point (11,12) - napravili smo objekat za klasu Point koji ima vrednost 11 i 12
+		Point p1 = new Point();  // zbog ovoga postoji prazan konstruktor
 		p1.setX(5);
 		System.out.println("Kordinata x tacke P1 je "+ p1.getX());
 		p1.setY(7);
@@ -17,7 +18,7 @@ public class Test {
 		double distance = p1.distance(p2.getX(), p2.getY());
 		System.out.println("Distance is "+ distance);
 
-		Line l1= new Line();
+		Line l1= new Line();  // u zagradu stavljamo tacke koje smo gore prethodno definisali nmp p1,p2
 		l1.setStartPoint(p1);
 		l1.setEndPoint(p1);
 		int odtacke = p2.getX();
@@ -74,14 +75,23 @@ public class Test {
 		Circle c3 = new Circle (new Point (3,5), 8);
 		System.out.println (c3.area());
 	
-		Point p6 = new Point (3,5);
+		
 		System.out.println(c3.equals(d));
 		System.out.println(d.equals(c3));
 		/* ovde treba jedno da mi je true, a drugo false 
 		 * zato sto klasa Donut nasledjena od klase Circle
 		 */
 		
+		int []niz = new int [10];
+		niz[0]=1;
+		for (int i=1; i<niz.length;i++) {
+			niz[i]= i*2;
+			System.out.println(niz[i] + " ");
+		}
+		
+	
 	}
+	
 	
 
 		}

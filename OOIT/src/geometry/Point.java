@@ -2,11 +2,15 @@ package geometry;
 
 public class Point {
 
+	
+	// OVO SU OBELEZJA 
 	private int x;
 	private int y;
 	private boolean selected;
 	
-	public Point ( ) {
+	// OVO SU KONSTRUKTORI- oni sluze za kreiranje objekata neke klase
+	
+	public Point () { // prazan konstruktor sluzi kako bismo kasnije mogli da setujemo neke vrednosti 
 		}
 	 
 	public Point (int x,int y) {
@@ -28,7 +32,10 @@ public class Point {
 	double d = Math.sqrt(dx*dx + dy*dy);
 	return d; 
 	}
-	
+
+	public boolean contains (int x, int y) {
+		return this.distance(x, y)<=2;
+	}
 	@Override
 	public String toString() {
 		return "("+ x + "," + y + ")"; 

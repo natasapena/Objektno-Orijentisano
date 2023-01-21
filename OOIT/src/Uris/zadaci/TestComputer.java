@@ -1,4 +1,4 @@
-package Uris.zadaci;
+package uris.zadaci;
 
 public class TestComputer {
 

@@ -48,6 +48,16 @@ public class Rectangle {
 	return width*height;
 	}
 	
+	public boolean contains (int x, int y) {
+		return upperLeft.getX() < x && ((upperLeft.getX()+ width)> x) && (upperLeft.getY()< y
+				&& upperLeft.getY()+ width >y);
+	}
+	
+	public boolean contains (Point p) {
+		return this.contains(p.getX(), p.getY());	
+	}
+	
+	
 	public Point getUpperLeft() {
 	return upperLeft;
 	}

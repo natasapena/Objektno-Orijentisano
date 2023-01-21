@@ -27,9 +27,9 @@ public class Circle {
 	
 	@Override
 	public boolean equals (Object obj) {
-		if (obj instanceof Circle) {
-			Circle temp = (Circle) obj ;
-			if (center.equals(temp.getCenter()) && r == temp.getR()){
+		if (obj instanceof Circle) { // ispitujemo da li je objekat tipa Circle 
+			Circle temp = (Circle) obj ; // KASTOVANJE - tip objekta pretvaramo u tip Circle, kako bi mogli porediti
+			if (center.equals(temp.getCenter()) && r == temp.getR()){ // da li je centar od temp jednak centru klase Circle u kojoj se nalazimo
 				return true;
 			}
 		}return false;
@@ -41,6 +41,15 @@ public class Circle {
 	
 	public double area() {
 	return r* r * Math.PI;
+	}
+	
+	public boolean contains (int x, int y) {
+		return center.distance(x, y) <=r;
+	}
+	
+	//da li circle sadrzi neku tacku
+	public boolean contains (Point p) {
+		return center.distance(p.getX(),p.getY()) <=r;
 	}
 	
 	public Point getCenter() {
