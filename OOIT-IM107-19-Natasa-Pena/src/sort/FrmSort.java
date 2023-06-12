@@ -56,7 +56,7 @@ public class FrmSort extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 359, 432);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(255, 172, 89));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -84,8 +84,26 @@ public class FrmSort extends JFrame {
 		listSort.setModel(dlm);
 		
 		JPanel toolbar = new JPanel();
-		toolbar.setBackground(new Color(255, 255, 255));
+		toolbar.setBackground(new Color(255, 172, 89));
 		contentPane.add(toolbar, BorderLayout.SOUTH);
+		
+		JButton btnSort = new JButton("Sort rectangle");
+		btnSort.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(dlm.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "List is empty!", "ERROR", JOptionPane.ERROR_MESSAGE);
+				} else {
+					listRect.sort(null);
+					dlm.clear();
+					for(int i=0; i<listRect.size(); i++) {
+						dlm.addElement(listRect.get(i));
+					}
+				}
+			}
+		});
+		btnSort.setForeground(new Color(0, 0, 0));
+		btnSort.setBackground(new Color(255, 255, 255));
+		toolbar.add(btnSort);
 		
 		JButton btnAdd = new JButton("Add rectangle");
 		btnAdd.addActionListener(new ActionListener() {
@@ -109,24 +127,6 @@ public class FrmSort extends JFrame {
 		btnAdd.setForeground(new Color(0, 0, 0));
 		btnAdd.setBackground(new Color(255, 255, 255));
 		toolbar.add(btnAdd);
-		
-		JButton btnSort = new JButton("Sort rectangle");
-		btnSort.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(dlm.isEmpty()) {
-					JOptionPane.showMessageDialog(null, "List is empty!", "ERROR", JOptionPane.ERROR_MESSAGE);
-				} else {
-					listRect.sort(null);
-					dlm.clear();
-					for(int i=0; i<listRect.size(); i++) {
-						dlm.addElement(listRect.get(i));
-					}
-				}
-			}
-		});
-		btnSort.setForeground(new Color(0, 0, 0));
-		btnSort.setBackground(new Color(255, 255, 255));
-		toolbar.add(btnSort);
 	}
 
 }

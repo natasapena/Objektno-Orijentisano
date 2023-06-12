@@ -51,7 +51,7 @@ public class FrmStack extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 403, 435);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(255, 172, 89));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -117,6 +117,7 @@ public class FrmStack extends JFrame {
 		btnDelete.setForeground(new Color(0, 0, 0));
 		
 		JList listStack = new JList();
+		listStack.setBackground(new Color(255, 172, 89));
 		listStack.setBounds(108, 11, 271, 374);
 		contentPane.add(listStack);
 		listStack.setModel(dlm);
